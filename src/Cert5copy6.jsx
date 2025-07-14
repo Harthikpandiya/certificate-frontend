@@ -131,11 +131,11 @@ const fetchCourseSuggestions = async (value) => {
 
 const handleSearch = async () => {
   try {
-    const searchQuery = formData.regNo; // or whatever user types
+  const searchQuery = formData.regNo;
 
-   const response = await axios.get(
-  `https://certificate-backend.onrender.com/api/students/search?q=${formData.regNo}`
-);
+    const response = await axios.get(
+      `https://certificate-backend.onrender.com/api/students/search?q=${searchQuery}`
+    );
     const data = response.data;
 
     const fileNameFromDB = data.file || "";
