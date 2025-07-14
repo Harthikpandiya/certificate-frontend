@@ -66,7 +66,9 @@ const Certp5copy6= () => {
     const file = e.target.files[0];
     if (file) setFormData({ ...formData, file });
   };
-
+  const handleImageClick = () => {
+    fileInputRef.current.click();
+  };
   const handleSearch = async () => {
     try {
       const searchQuery = formData.regNo;
