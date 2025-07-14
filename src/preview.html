@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form with Preview</title>
+</head>
+<body>
+
+<!-- Step 1: Form -->
+<div id="formStep">
+  <h2>Fill the Form</h2>
+  <label>Name: <input type="text" id="name"></label><br>
+  <label>Email: <input type="email" id="email"></label><br>
+  <button onclick="showPreview()">Next</button>
+</div>
+
+<!-- Step 2: Preview -->
+<div id="previewStep" style="display: none;">
+  <h2>Preview your Details</h2>
+  <p><strong>Name:</strong> <span id="previewName"></span></p>
+  <p><strong>Email:</strong> <span id="previewEmail"></span></p>
+  <button onclick="goBack()">Back</button>
+  <button onclick="submitForm()">Submit</button>
+</div>
+
+<script>
+function showPreview() {
+  // Get form values
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+
+  // Fill preview
+  document.getElementById("previewName").textContent = name;
+  document.getElementById("previewEmail").textContent = email;
+
+  // Switch screens
+  document.getElementById("formStep").style.display = "none";
+  document.getElementById("previewStep").style.display = "block";
+}
+
+function goBack() {
+  document.getElementById("formStep").style.display = "block";
+  document.getElementById("previewStep").style.display = "none";
+}
+
+function submitForm() {
+  alert("Form submitted!");
+  // Here you can write actual form submission logic
+}
+</script>
+
+</body>
+</html>
