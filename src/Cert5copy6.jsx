@@ -193,7 +193,11 @@ const Certp5copy6= () => {
     if (!mode) setMode("submit");
     setStep(2);
   };
+    const fntc = () => {
+    window.location.reload(); // Page full refresh aagum
+  };
 
+  
   return (
   <div className="m">
         <FontAwesomeIcon
