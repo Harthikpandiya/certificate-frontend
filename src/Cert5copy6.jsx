@@ -74,7 +74,8 @@ const Certp5copy6 = () => {
   const handleSearch = async () => {
     try {
       const searchQuery = formData.regNo;
-      const response = await axios.get(`https://certificate-backend.onrender.com/api/students/search?q=${searchQuery}`);
+     const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/students/search?q=${searchQuery}`);
+
       const data = response.data;
       const fileName = data.file?.split("/").pop() || "";
       setFormData((prev) => ({ ...prev, ...data, file: null, filePath: data.file }));
